@@ -1,0 +1,261 @@
+@import "variables";
+
+.dice-page-wrapper {
+  .team-player-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .team-colour-indicator {
+      height: 3px;
+      width: 60px;
+      // border-radius: 20%;
+      margin-bottom: -12px;
+    }
+    h3 {
+      letter-spacing: 3px;
+      font-weight: 100;
+    }
+  }
+
+  .dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+
+    .dice-name {
+      margin: 0;
+    }
+    .dice-description {
+      margin: 0;
+      margin-bottom: 15px;
+    }
+
+    .dice-options-container {
+      display: flex;
+      display: grid;
+      grid-template-columns: repeat(3, 50px);
+      grid-gap: 10px;
+      margin-bottom: 15px;
+
+      .dice-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        border-radius: 100px;
+        color: $diceBox;
+        border: 2px solid $diceBox;
+      }
+    }
+  }
+}
+
+.waiting-page-wrapper {
+  @include page-width-height;
+}
+
+.active-game-wrapper {
+  .dice-graphic-container {
+    position: absolute;
+    display: flex;
+    top: 50px;
+    width: 40px;
+    left: calc(50vw - 25px);
+
+    @media (min-height: 600px) {
+      top: 12vh;
+    }
+    @media (min-width: 600px) {
+      top: calc(103px);
+    }
+
+    .dice-graphic-image {
+      width: 30px;
+      object-fit: contain;
+    }
+    .dice-graphic-text {
+      margin: 0;
+    }
+  }
+}
+
+.card-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // margin-top: 10px;
+
+  .game-waiting-tip {
+    padding: 5px 10px;
+  }
+
+  .card {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    max-width: 800px;
+    max-height: 400px;
+    min-height: 300px;
+    border-radius: 10px;
+    background-color: $cardC;
+    color: #fff;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    font-family: sans-serif;
+
+    .confirm-guesses-container {
+      color: $textC;
+      color: #fff;
+      .confirm-guesses-score {
+        margin: 0;
+        font-size: 26px;
+        font-weight: 900;
+      }
+      .confirm-guesses-description {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+
+    .list-items {
+      color: $textC;
+      h3 {
+        margin: 10px 0;
+        font-size: 22px;
+        font-weight: 900;
+        color: #fff;
+        // background-color: #fff;
+        // font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .card-clue-divider {
+        width: 20px;
+        margin: 0px auto;
+        color: $textC;
+        background-color: transparent;
+        border: 1px solid rgba(119, 119, 119, 0.212);
+      }
+
+      .post-page-card-item {
+        // -webkit-text-stroke: 1px rgba(0, 0, 0, 0.438);
+      }
+
+      .correct-clue-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .check-or-cross {
+          font-size: 16px;
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .card-deco-container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      pointer-events: none;
+
+      .card-deco-right,
+      .card-deco-left {
+        height: 100%;
+        width: 5vw;
+        // background-color: tomato;
+      }
+      .card-deco-right {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        // background-color: rgb(0, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h4 {
+          // writing-mode: vertical-rl;
+          transform: rotateZ(90deg);
+          color: $textC;
+          text-orientation: "upright";
+          letter-spacing: 5px;
+        }
+      }
+      .card-deco-left {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+        // background-color: rgb(243, 52, 52);
+      }
+    }
+
+    .waiting-start-btn {
+      cursor: pointer;
+      width: 180px;
+      font-size: 40px;
+      font-weight: 900;
+      border-radius: 4000px;
+      padding: 5px 10px;
+      color: #fff;
+      background-color: #ff1111;
+      border: none;
+      margin-right: 10px;
+      &:hover {
+        // background-color: rgb(245, 153, 153);
+      }
+    }
+
+    .end-game-btn {
+      cursor: pointer;
+      align-self: flex-end;
+      justify-self: end;
+      position: absolute;
+      bottom: -15px;
+      right: 10px;
+      font-size: 17px;
+      font-weight: 700;
+      border-radius: 4000px;
+      padding: 5px 7px;
+      color: $textC;
+      background-color: rgb(245, 104, 104);
+      border: none;
+      border: 3px solid $bgc;
+      &:hover {
+        // background-color: rgb(65, 99, 109);
+        // color: rgb(180, 217, 228);
+      }
+    }
+    .rotate-card-btn {
+      cursor: pointer;
+      position: absolute;
+      top: -0px;
+      left: -0px;
+      height: 30px;
+      width: calc(100% + 0px);
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      border-radius: 10px 10px 0 0;
+      padding: 5px 7px;
+      // color: $text-colour;
+      // color: $bg-colour;
+      background-color: rgba(255, 255, 255, 0.103);
+      border: none;
+    }
+  }
+}

@@ -1,0 +1,301 @@
+@import "homePage";
+@import "variables";
+@import "options";
+@import "_diceAndPostPages";
+@import "configAndTeamsPage";
+@import "ads";
+@import "rules";
+
+html {
+  height: 100vh;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+* {
+  /* HIDE HIGHLIGHTING */
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+}
+
+body {
+  height: 100%;
+  background-color: $bgc;
+  color: $text-colour;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 100;
+  font-family: $ff1;
+
+  ::placeholder {
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  .home-reload-btn {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 1000px;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.5);
+
+    .home-reload-btn-triangle {
+      height: 15px;
+      width: 15px;
+      transform: rotateZ(-45deg);
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      margin-left: -30px;
+      margin-top: -10px;
+
+      .home-reload-mask {
+        transform: rotateZ(-45deg);
+        height: 10px;
+        width: 10px;
+        position: relative;
+        margin-top: 15px;
+        margin-left: -10px;
+
+        background-color: $bg-colour;
+      }
+    }
+  }
+
+  .logo-container {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    .logo-text-image {
+      filter: invert(1);
+      margin-right: 2px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+    .logo-text {
+      margin: 0;
+      font-size: 11px;
+      font-family: Arial, sans-serif;
+      font-weight: 100;
+      text-align: center;
+      overflow-x: hidden;
+    }
+  }
+
+  .logo-padding {
+    margin-top: 80px;
+    @media (max-width: 600px) {
+      margin-top: 50px;
+    }
+  }
+
+  .next-screen-btn {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 900;
+    border-radius: 4px;
+    padding: 5px 5px;
+    color: $bgc;
+    background-color: $textC;
+    border: none;
+    // margin: 10px 0;
+    // margin-right: 10px;
+    &:hover {
+      transition: all 200ms ease;
+      border-radius: 10px;
+    }
+  }
+
+  .back-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.959);
+    // border: 1px dotted rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: fixed;
+    top: 30px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    img {
+      width: 70%;
+      object-fit: contain;
+    }
+  }
+
+  .checkbox-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin: 5px 5px;
+
+    .checkbox-and-text {
+      display: flex;
+    }
+    .checkbox-msg-container {
+      overflow: hidden;
+      transition: all 300ms ease;
+      width: 95%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+
+      .checkbox-msg {
+        text-align: left;
+        // min-width: 130px;
+        // width: 60%;
+        margin: 0;
+        margin-top: 5px;
+        max-width: 200px;
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+    }
+    .checkbox-label {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .checkbox {
+      margin: 0 10px;
+      width: 21px;
+      height: 21px;
+      border-radius: 2px;
+      background-color: $textC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        transition: all 50ms ease;
+        border-radius: 4px;
+      }
+
+      .checkbox-selected {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        border-radius: 1px;
+        background-color: rgb(11, 158, 255);
+      }
+    }
+  }
+
+  .quick-start-initiate-btn {
+    align-self: flex-start;
+    // width: 140px;
+    font-size: 16px;
+    font-weight: 900;
+    // border-radius: 4px;
+    padding: 2px 10px;
+    color: $bgc;
+    background-color: $text-colour;
+    cursor: pointer;
+    border: none;
+    margin-top: 20px;
+    margin-left: 15px;
+    &:hover {
+      transition: all 200ms ease;
+      border-radius: 10px;
+    }
+  }
+}
+
+* {
+  outline: none;
+}
+
+.menu-closed {
+  transition: all 500ms ease;
+  transform: translateX(200px);
+}
+
+.skip-player-btn {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 5px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+
+.no-cards-error-container {
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .no-cards-text-container {
+    width: 80%;
+    max-width: 500px;
+    padding-bottom: 15px;
+    background-color: rgb(221, 50, 50);
+    border: 1px solid #fff;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .no-cards-image {
+      height: 100px;
+      width: 80%;
+      object-fit: contain;
+    }
+    .no-cards-error-btn {
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 4px;
+      margin-top: 10px;
+      padding: 3px 5px;
+      color: #000;
+      background-color: #ff1111;
+      border: 2px solid #000;
+    }
+  }
+}
+
+.game-rules-home-container {
+  position: absolute;
+  opacity: 0.7;
+  top: 10px;
+  right: 0px;
+  height: 20px;
+  padding: 0px 5px;
+  display: flex;
+  align-items: center;
+
+  .game-rules-home-text {
+    font-size: 14px;
+    margin: 10px 0;
+    color: $btn-text-colour;
+    font-family: $ff2;
+  }
+}

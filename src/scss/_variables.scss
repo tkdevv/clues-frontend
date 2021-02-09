@@ -1,0 +1,24 @@
+// $bg-colour: #1b1f2d;
+$bg-colour: #dadada;
+$bg-colour: #ffffff;
+$btn-text-colour: rgb(0, 0, 0);
+$text-colour: rgb(0, 0, 0);
+$card-colour: rgb(184, 185, 185);
+
+@mixin page-width-height {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+// COLOURS
+$bgc: #b9b9b9;
+$textC: #000;
+$cardC: rgb(24, 24, 24);
+$diceBox: $textC;
+
+// FONTS
+$ff1: serif;
+$ff2: "Caveat", sans-serif;

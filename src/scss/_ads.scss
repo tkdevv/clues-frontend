@@ -1,0 +1,74 @@
+@import "variables";
+
+.bna-wrapper {
+  width: 100%;
+  margin: 500px;
+  margin: 10px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+
+  .bna-container {
+    // width: 90%;
+    max-width: 500px;
+    font-family: serif;
+    background-color: rgba(48, 128, 202, 0.137);
+    border: 1px solid rgba(255, 255, 255, 0.452);
+    padding: 10px;
+    margin-top: 30px;
+    position: relative;
+
+    .bna-indicator {
+      margin: 0;
+      position: absolute;
+      top: -17px;
+      left: 15px;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    h3,
+    h1 {
+      margin: 2px 0;
+    }
+
+    .bna-btyb-text {
+      font-weight: 100;
+      font-style: italic;
+      margin-top: -5px;
+      margin-bottom: 5px;
+    }
+
+    .head-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 40px;
+        height: 40px;
+        padding: 0 5px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .bna-description {
+    font-weight: 100;
+    font-size: 18px;
+  }
+
+  .bna-cta-btn {
+    cursor: pointer;
+    margin-top: 10px;
+    border: none;
+    font-size: 16px;
+    padding: 2px 7px;
+    font-weight: 800;
+    background-color: rgb(255, 215, 40);
+    &:hover {
+      background-color: rgb(255, 210, 7);
+    }
+  }
+}
